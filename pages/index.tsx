@@ -1,14 +1,24 @@
-import {AppBar, Container, Toolbar, Typography} from "@material-ui/core";
+import Layout from "../components/Layout";
+import {Grid, List, ListItem, Typography} from "@material-ui/core";
 
 const IndexPage = () => (
-    <Container>
-        <AppBar position={"static"}>
-            <Toolbar>
-                <img src={"/images/favicon.ico"} alt={"favicon.ico"} width={"50px"} height={"50px"}/>
-                <Typography variant={"h6"}>MMSF Hub</Typography>
-            </Toolbar>
-        </AppBar>
-    </Container>
+    <Layout title={"MMSFHub"}>
+        <Grid container spacing={1}>
+            <Grid container item xs={3}>
+                <Typography variant={"h5"}>サーバーリスト</Typography>
+                <List>
+                    <ListItem>1</ListItem>
+                    <ListItem>2</ListItem>
+                    <ListItem>3</ListItem>
+                    <ListItem>4</ListItem>
+                    <ListItem>5</ListItem>
+                </List>
+            </Grid>
+            <Grid container item xs={6}>
+                <Typography variant={"h5"}>SSS Viewer</Typography>
+            </Grid>
+        </Grid>
+    </Layout>
 )
 
 export default IndexPage
