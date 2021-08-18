@@ -1,5 +1,45 @@
 import Layout from "../components/Layout";
 import {Grid, List, ListItem, Typography} from "@material-ui/core";
+import Server from "../src/sss-viewer/Server";
+
+const servers: Server[] = [
+    {
+        id: 0,
+        level: 1,
+        name: "test1",
+        type: "satellite",
+        cards: [
+            {
+                name: "card1",
+                class: "standard",
+            }
+        ]
+    },
+    {
+        id: 1,
+        level: 2,
+        name: "test2",
+        type: "satellite",
+        cards: [
+            {
+                name: "card2",
+                class: "standard",
+            }
+        ]
+    },
+    {
+        id: 2,
+        level: 3,
+        name: "test3",
+        type: "meteor",
+        cards: [
+            {
+                name: "card3",
+                class: "mega",
+            }
+        ]
+    },
+]
 
 const IndexPage = () => (
     <Layout title={"MMSFHub"}>
@@ -7,11 +47,7 @@ const IndexPage = () => (
             <Grid container item xs={3}>
                 <Typography variant={"h5"}>サーバーリスト</Typography>
                 <List>
-                    <ListItem>1</ListItem>
-                    <ListItem>2</ListItem>
-                    <ListItem>3</ListItem>
-                    <ListItem>4</ListItem>
-                    <ListItem>5</ListItem>
+                    {servers.map((s, i) => <ListItem key={i}>{s.name}</ListItem>)}
                 </List>
             </Grid>
             <Grid container item xs={6}>
