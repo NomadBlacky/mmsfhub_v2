@@ -1,15 +1,14 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import {AppBar, Container, Toolbar, Typography} from "@material-ui/core";
 
 const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
+    <Container>
+        <AppBar position={"static"}>
+            <Toolbar>
+                <img src={"/images/favicon.ico"} alt={"favicon.ico"} width={"50px"} height={"50px"}/>
+                <Typography variant={"h6"}>MMSF Hub</Typography>
+            </Toolbar>
+        </AppBar>
+    </Container>
 )
 
 export default IndexPage
